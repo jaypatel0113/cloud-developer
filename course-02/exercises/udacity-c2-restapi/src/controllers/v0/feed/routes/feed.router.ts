@@ -3,6 +3,8 @@ import { FeedItem } from '../models/FeedItem';
 import { requireAuth } from '../../users/routes/auth.router';
 import * as AWS from '../../../../aws';
 
+
+
 const router: Router = Router();
 
 // Get all feed items
@@ -18,13 +20,55 @@ router.get('/', async (req: Request, res: Response) => {
 
 //@TODO
 //Add an endpoint to GET a specific resource by Primary Key
+router.get('/:id', async (req: Request, res: Response) => {
+    let { id } = req.params;
+    const item = await FeedItem.findByPk(id);
+    if(!item){
+        return res.status(404).send("Invalid Id");
+    }
+    res.status(200).send(item);
+});
 
 // update a specific resource
-router.patch('/:id', 
-    requireAuth, 
+router.patch('/:id',
+    requireAuth,
     async (req: Request, res: Response) => {
         //@TODO try it yourself
-        res.send(500).send("not implemented")
+         let id  = req.params.id;
+        const item = await FeedItem.findByPk(id);
+
+        // if((req.body.caption == null || undefined) && (req.body.url == null || undefined)){
+        //   return res.send("Caption and URL are missing")
+        // }
+        if(req.body.caption != null || undefined){
+          item.caption = req.body.caption;
+        }
+
+        if(req.body.url != null || undefined){
+          item.url = req.body.url;
+        }
+
+        const updatedItem = await item.save();
+
+
+        // if(!item){
+        //     return res.status(404).send("Invalid Id");
+        // }
+        // const caption = req.body.caption;
+        // const fileName = req.body.url;
+        //
+        // if(!caption){
+        //     return res.status(404).send({ message: 'Caption is required or malformed' });
+        // }
+        //
+        // if(!fileName){
+        //     return res.status(404).send({ message: 'File url is required' });
+        // }
+
+        // const updateItem = item.updateAttributes(caption,fileName);
+
+
+        res.status(200).send(updatedItem);
 });
 
 
