@@ -34,7 +34,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
 
     const image_Url = req.query.image_url;
     //.split(' ')[0];
-    console.log(image_Url);
+    //console.log(image_Url);
     if(!image_Url){
       return res.status(400).send({message: "Please provide correct imageURL link"});
     }
@@ -53,9 +53,9 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
   
   // Root Endpoint
   // Displays a simple message to the user
-  // app.get( "/", async ( req, res ) => {
-  //   res.send("try GET /filteredimage?image_url={{}}")
-  // } );
+  app.get( "/", async ( req, res ) => {
+    res.send("try GET /filteredimage?image_url={{}}")
+  } );
   
 
   // Start the Server
