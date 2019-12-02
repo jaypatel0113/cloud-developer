@@ -7,3 +7,5 @@ http://udagram-jpatel-Image-filter-dev-dev.us-east-1.elasticbeanstalk.com/filter
 Screenshot proof:
 Please see attached jpatel_project02_deployment.png
 
+Note: All implemented code for project02 image-filter-starter-code you can find under dev branch
+
