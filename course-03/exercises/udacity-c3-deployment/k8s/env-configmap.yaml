@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+data:
+  AWS_BUCKET: udagram-jpatel-dev
+  AWS_PROFILE: default
+  AWS_REGION: us-east-1
+  JWT_SECRET: hellowold
+  POSTGRESS_DB: udagramjpateldev
+  POSTGRESS_HOST: udagramjpateldev.czdjhmm8ggc4.us-east-1.rds.amazonaws.com
+  URL: http://localhost:8100
+metadata:
+  name: env-config
