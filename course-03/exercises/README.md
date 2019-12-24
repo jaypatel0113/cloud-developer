@@ -91,4 +91,6 @@ port-forward to forward services when you have multiple nodes running and load b
 
     kubectl port-forward services/reverseproxy 8080:8080
     kubectl port-forward service/frontend 8100:8100
-    
+ 
+ 
+ #See Screenshots folder for Docker hub, Travis CI, CloudWatch Monitoring, Application running on AWS cluster, Kubernetes pods.
