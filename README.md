@@ -1,4 +1,4 @@
 # cloud-developer
 content for Udacity's cloud developer nanodegree
 
-Please refer to 
+Please refer to Project3_submission.pdf
